@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Service Details - iPortfolio</title>
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body class="service-details-page">
+
+  <main class="main">
+    <div class="page-title dark-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">Service Details</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Service Details</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+    <section id="service-details" class="service-details section">
+      <div class="container">
+        <div class="row gy-4">
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="services-list">
+              <a href="#" class="active" data-service="bookkeeping">Bookkeeping</a>
+              <a href="#" data-service="reconciliation">Sales Reconciliation</a>
+              <a href="#" data-service="vat">VAT & Payroll Review</a>
+              <a href="#" data-service="reporting">Financial Reporting</a>
+              <a href="#" data-service="automation">Automation & Tech Integration</a>
+            </div>
+            <h4 id="sidebar-title">Helping businesses stay financially organized</h4>
+            <p id="sidebar-desc">I assist UK- and US-based clients with accurate bookkeeping, reconciliation, and financial clarity using tools like Xero, QuickBooks, and FreeAgent.</p>
+          </div>
+
+          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+            <img src="assets/img/services.jpg" alt="" class="img-fluid services-img mb-4">
+            <div id="service-content">
+              <h3>Accurate bookkeeping for confident decision-making</h3>
+              <p>I maintain well-organized, compliant, and updated books for businesses, ensuring clarity across your income, expenses, and cash flow.</p>
+              <ul>
+                <li><i class="bi bi-check-circle"></i> Daily, weekly, or monthly bookkeeping services</li>
+                <li><i class="bi bi-check-circle"></i> Categorization based on chart of accounts</li>
+                <li><i class="bi bi-check-circle"></i> Periodic reconciliations and error fixes</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const services = {
+        bookkeeping: {
+          title: "Accurate bookkeeping for confident decision-making",
+          text: `<p>I maintain well-organized, compliant, and updated books for businesses, ensuring clarity across your income, expenses, and cash flow.</p>
+                <ul>
+                  <li><i class="bi bi-check-circle"></i> Daily, weekly, or monthly bookkeeping services</li>
+                  <li><i class="bi bi-check-circle"></i> Categorization based on chart of accounts</li>
+                  <li><i class="bi bi-check-circle"></i> Periodic reconciliations and error fixes</li>
+                </ul>`,
+          sidebarTitle: "Helping businesses stay financially organized",
+          sidebarDesc: "I assist UK- and US-based clients with accurate bookkeeping, reconciliation, and financial clarity using tools like Xero, QuickBooks, and FreeAgent."
+        },
+        reconciliation: {
+          title: "Platform Sales Reconciliation",
+          text: `<p>I reconcile transactions from Shopify, Amazon, Stripe, and Etsy—separating sales, fees, refunds, and payouts.</p>
+                <ul>
+                  <li><i class="bi bi-check-circle"></i> Match deposits with backend sales records</li>
+                  <li><i class="bi bi-check-circle"></i> Identify and resolve mismatches</li>
+                  <li><i class="bi bi-check-circle"></i> Separate fees for clean reporting</li>
+                </ul>`,
+          sidebarTitle: "Accurate and hassle-free reconciliation",
+          sidebarDesc: "Every penny in your books should match your platform payouts—clearly and accurately."
+        },
+        vat: {
+          title: "VAT and Payroll Review",
+          text: `<p>Reviewing VAT reports and payroll summaries for accuracy before submission.</p>
+                <ul>
+                  <li><i class="bi bi-check-circle"></i> VAT summary checks</li>
+                  <li><i class="bi bi-check-circle"></i> Payroll and payslip matching</li>
+                  <li><i class="bi bi-check-circle"></i> Error identification before submission</li>
+                </ul>`,
+          sidebarTitle: "Stay compliant with confidence",
+          sidebarDesc: "I ensure your VAT and payroll filings are reviewed and error-free."
+        },
+        reporting: {
+          title: "Financial Reporting",
+          text: `<p>Clear, concise, and client-ready reports to track business performance.</p>
+                <ul>
+                  <li><i class="bi bi-check-circle"></i> Monthly reports: P&L, balance sheet</li>
+                  <li><i class="bi bi-check-circle"></i> Cash flow visualizations</li>
+                  <li><i class="bi bi-check-circle"></i> PDF and spreadsheet formats</li>
+                </ul>`,
+          sidebarTitle: "Know your numbers, make better decisions",
+          sidebarDesc: "Understand your finances with easy-to-read, insightful reports."
+        },
+        automation: {
+          title: "Automation & Tech Integration",
+          text: `<p>I use my tech background to automate repetitive tasks and connect tools for smarter workflows.</p>
+                <ul>
+                  <li><i class="bi bi-check-circle"></i> File conversions, email alerts, data sync</li>
+                  <li><i class="bi bi-check-circle"></i> Custom scripts for report generation</li>
+                  <li><i class="bi bi-check-circle"></i> App setup and process automation</li>
+                </ul>`,
+          sidebarTitle: "Work smarter, not harder",
+          sidebarDesc: "Leverage automation to save time and avoid errors in your bookkeeping process."
+        }
+      };
+
+      const links = document.querySelectorAll('.services-list a');
+      const contentDiv = document.getElementById('service-content');
+      const sidebarTitle = document.getElementById('sidebar-title');
+      const sidebarDesc = document.getElementById('sidebar-desc');
+
+      links.forEach(link => {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          links.forEach(l => l.classList.remove('active'));
+          this.classList.add('active');
+          const key = this.getAttribute('data-service');
+          const s = services[key];
+          contentDiv.innerHTML = `<h3>${s.title}</h3>${s.text}`;
+          sidebarTitle.innerText = s.sidebarTitle;
+          sidebarDesc.innerText = s.sidebarDesc;
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
